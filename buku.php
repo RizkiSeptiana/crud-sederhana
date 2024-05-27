@@ -15,10 +15,10 @@
 
 </head>
 <body>
-    <div class="container w-75 mm-2 p-5 bg-secondary text-white h-100" >
-        <h1>Daftar Buku</h1>
-
-            <table class="table table-striped table-info">
+    <div class="body bg-secondary w-75 m-auto" style="height :800px;">
+    <div class="container mm-2 p-5 text-white">
+        <h1 class="mb-4">Daftar Buku</h1>
+            <table class="table table-striped table-info table-hover table-bordered text-center  ">
             <thead>     
                 <tr>
                 <th scope="col">Nama</th>
@@ -32,23 +32,22 @@
 
             foreach ($query as $buku){ ?>
             <tr>
-                <td><?php echo $buku["nama"]; ?></td>
+                <td class="text-start"><?php echo $buku["nama"]; ?></td>
                 <td><?php echo $buku["isbn"]; ?></td>
                 <td><?php echo $buku["unit"]; ?></td>
                 <td>
-                    <a href=<?php echo "editBuku.php?id=". $buku["id"]?>>Edit</a>
-                    <a href=<?php echo "deleteBuku.php?id=". $buku["id"]?>>Hapus</a>
+                    <a href=<?php echo "editBuku.php?id=". $buku["id"]?>><button type="button" class="btn btn-primary">Edit</button></a>
+                    <a href=<?php echo "deleteBuku.php?id=". $buku["id"]?>><button type="button" class="btn btn-danger">Hapus</button></a>
                 </td>
             </tr>
             <?php }?>
             </tbody>
             </table>
 
-        <a href="./tambahBuku.php">Tambah Data Buku </a>
-        <br>
-        <a href="./index.php">Kembali ke Halaman Utama</a>
+        <a href="./tambahBuku.php"><button type="button" class="btn btn-info my-1 me-2">Tambah Data Buku </button></a>
+        <a href="./index.php"><button type="button" class="btn btn-info my-1">Kembali ke Halaman Utama</button></a>
 
     </div>
-
+    </div>
 </body>
 </html>
